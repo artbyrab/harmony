@@ -10,6 +10,13 @@ A micro PHP framework that works in harmony.
 $ git clone artbyrab/harmony
 ```
 
+* Run composer install
+    * From the project root in a terminal run:
+
+```shell
+$ composer install
+```
+
 * Create a database on your localhost called 'harmony_dev'
 * Create a .env file
     * Copy the .env.example file and update the database information with your localhost database information
