@@ -1,0 +1,23 @@
+{
+    "name": "artbyrab/harmony",
+    "description": "A micro PHP framework that works in harmony.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "artbyrab",
+            "email": "contact@art-by-rab.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.0",
+        "symfony/console": "^5.0",
+        "vlucas/phpdotenv": "^4.1",
+        "fzaninotto/faker": "^1.9",
+        "robmorgan/phinx": "^0.11.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "artbyrab\\Harmony\\": "src/"
+        }
+    }
+}
