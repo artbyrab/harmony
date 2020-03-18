@@ -1,0 +1,11 @@
+# Ignore the composer vendor folder
+/vendor
+
+# Ignore the .env file
+.env
+
+# ignore the .phinx.yml file
+phinx.yml
+
+# ignore the TODO file
+TODO.md
