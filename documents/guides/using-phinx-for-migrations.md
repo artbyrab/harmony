@@ -6,7 +6,7 @@
 $ vendor/bin/phinx create MyNewMigration
 ```
 
-Typically you would try and name your migration in a sensible way.
+Typically you would try and name your migration in a descriptive way. First the action, like create or update or delete, then for example maybe the table name and a definer to explain it is a table.
 
 * To create a new table called tickets
 

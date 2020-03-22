@@ -41,16 +41,29 @@ php vendor/bin/phinx seed:run
 ## Rolling back the database
 
 * You can rollback the database migrations one by one
-* Run the following:
+* Run the following as many times as you require:
 
 ```shell
 $ vendor/bin/phinx rollback
 ```
 
+## Starting the php server
+
+To view the site start a php server:
+
+* Navigate to the app root
+* Run the following:
+
+```shell
+$ php -S localhost:8888
+```
+
+* Navigate to http://localhost:8888 to view in your browser
+
 ## Structure
 
 * documents/
-    guides/
+    * guides/
         - 'Useful guides'
 * src/
     - 'The app folder'
@@ -61,8 +74,6 @@ $ vendor/bin/phinx rollback
             - 'Database migration files to create or update tables'
     * models/
         - 'For any future models'
-
-* 
 
 ## Resources
 
