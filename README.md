@@ -20,8 +20,9 @@ $ composer install
 * Create a database on your localhost called 'harmony_dev'
 * Create a .env file
     * Copy the .env.example file and update the database information with your localhost database information
-* Create a phinx.yml file
-    * Copy the example.phinx.yml file and update the database information your localhost database information
+* Create a phinx.php file
+    * Copy the example.phinx.php file
+    * You should not have to update any information as it will all be passed via the .env file
 * Run the migrations
     * From the project root run the following:
 
