@@ -1,7 +1,18 @@
 <?php
 
-// include the .env file
+/**
+ * Dotenv
+ * 
+ * Load the .env to pass the environment variables.
+ */
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
+/**
+ * Phinx configuration
+ * 
+ * Main configuration for Phinx.
+ */
 return
 [
     'paths' => [
