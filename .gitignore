@@ -8,7 +8,7 @@
 phinx.yml
 
 # ignore the .phinx.php file
-phinx.yml
+phinx.php
 
 # ignore the TODO file
 TODO.md
