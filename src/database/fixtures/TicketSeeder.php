@@ -1,8 +1,12 @@
 <?php
 
-
 use Phinx\Seed\AbstractSeed;
 
+/**
+ * Ticket seeder
+ * 
+ * @author artbyrab
+ */
 class TicketSeeder extends AbstractSeed
 {
     /**

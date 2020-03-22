@@ -2,6 +2,11 @@
 
 use Phinx\Migration\AbstractMigration;
 
+/**
+ * Create ticket note table
+ * 
+ * @author artbyrab
+ */
 class CreateTicketNoteTable extends AbstractMigration
 {
     /**

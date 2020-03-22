@@ -2,6 +2,11 @@
 
 use Phinx\Seed\AbstractSeed;
 
+/**
+ * Ticket note seeder
+ * 
+ * @author artbyrab
+ */
 class TicketNoteSeeder extends AbstractSeed
 {
     /**

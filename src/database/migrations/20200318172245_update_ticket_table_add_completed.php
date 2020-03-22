@@ -2,6 +2,11 @@
 
 use Phinx\Migration\AbstractMigration;
 
+/** 
+ * Update ticket table add completed column
+ * 
+ * @author artbyrab
+ */
 class UpdateTicketTableAddCompleted extends AbstractMigration
 {
     /**
