@@ -1,10 +1,19 @@
 <?php
 
-
 use Phinx\Seed\AbstractSeed;
 
 class TicketNoteSeeder extends AbstractSeed
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function getDependencies()
+    {
+        return [
+            'TicketSeeder',
+        ];
+    }
+
     /**
      * Run Method.
      *
