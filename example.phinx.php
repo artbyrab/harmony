@@ -17,7 +17,7 @@ return
 [
     'paths' => [
         'migrations' => 'src/database/migrations',
-        'seeds' => 'src/database/db/seeds'
+        'seeds' => 'src/database/fixtures'
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
