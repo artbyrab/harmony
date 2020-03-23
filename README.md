@@ -33,7 +33,7 @@ $ vendor/bin/phinx migrate
 * Run the fixtures
 
 ```shell
-php vendor/bin/phinx seed:run
+$ php vendor/bin/phinx seed:run
 ```
 
 * If you view your database now you should see that the tables have been created and your data is present
