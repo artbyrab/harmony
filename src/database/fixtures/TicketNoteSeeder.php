@@ -31,17 +31,21 @@ class TicketNoteSeeder extends AbstractSeed
     {
         $data = [
             [
-                'title' => 'Help desk request',
-                'description' => 'I need some assistance with the ticketing system can someone from the help desk please contact me.',
+                'ticket_id' => 1,
+                'note' => 'This ticket is well overdue, can someone pick this up.',
                 'created_datetime' => date('Y-m-d H:i:s'),
                 'updated_datetime' => date('Y-m-d H:i:s'),
             ],
             [
-                'title' => 'New customer added',
-                'description' => 'A new customer has been added to the system but there is an issue with their email.',
+                'ticket_id' => 2,
+                'note' => 'This ticket needs further investigation, please can you ensure support investigate this.',
                 'created_datetime' => date('Y-m-d H:i:s'),
                 'updated_datetime' => date('Y-m-d H:i:s'),
             ]
         ];
+
+        $posts = $this->table('ticket_note');
+        $posts->insert($data)
+              ->save();
     }
 }
