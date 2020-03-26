@@ -35,26 +35,44 @@ if ($_ENV['APP_DEBUG'] === true) {
 /**
  * Slim PHP
  * 
- *  - Create a container that will get automatically injected into Controllers 
- *  when they are instantiated
- *  - Setup the middleware
- *  - Define routes
- *  - Run the app
+ * Create a dependency injection container 
  */
 $container = new Container();
 AppFactory::setContainer($container);
 
 $app = AppFactory::create();
 
+/**
+ * Middleware
+ */
 $app->addBodyParsingMiddleware();
 $app->addRoutingMiddleware();
 $app->addErrorMiddleware(true, true, true);
 
+/** 
+ * A typical route
+ * 
+ * We add text to the response body object before returning it.
+ */
 $app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("Hello Harmony!");
     return $response;
 });
 
+/**
+ * MVC style controller routes
+ * 
+ * These work by using the $container we set up earlier. When the SiteController
+ * class is instantiated the __construct method is already injected with the 
+ * container. Thus allowing us access to the containers contents in the 
+ * controller class.
+ */
+$app->get('/contact', \artbyrab\Harmony\controllers\SiteController::class . ':contact');
+$app->get('/about', \artbyrab\Harmony\controllers\SiteController::class . ':about');
+
+/**
+ * Run 
+ * 
+ * Run the slim app.
+ */
 $app->run();
-
-
