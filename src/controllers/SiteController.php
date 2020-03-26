@@ -16,7 +16,13 @@ class SiteController
      * @var object $container An instance of the container interface
      * automatically injected into the class via the entry script.
      */
-   protected $container;
+    protected $container;
+
+    /**
+     * @var object $renderer An instance of the Slim\Views\PhpRenderer class
+     * for rendering views.
+     */
+    protected $renderer;
 
     /**
      * Construct
@@ -26,6 +32,7 @@ class SiteController
     public function __construct(ContainerInterface $container) 
     {
         $this->container = $container;
+        $this->renderer = $this->container->get('renderer');
     }
 
     /**
@@ -37,8 +44,6 @@ class SiteController
      */
     public function index($request, $response, $args) 
     {
-        // your code
-        // to access items in the container... $this->container->get('');
         return $response;
     }
 
@@ -68,7 +73,17 @@ class SiteController
         $renderer = new PhpRenderer(dirname(__DIR__, 1) . '/views');
 
         return $renderer->render($response, "/site/about.php", $args);
-        
-        return $response;
+    }
+
+    /**
+     * About sitemap
+     * 
+     * @param object $request
+     * @param object $response
+     * @param array $args
+     */
+    public function sitemap($request, $response, $args) 
+    {
+        return $this->renderer->render($response, "/site/about.php", $args);
     }
 }
