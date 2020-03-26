@@ -12,6 +12,8 @@ use DI\Container;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
+use Slim\Views\PhpRenderer;
+// @TODO replace this with the base controller
 use artbyrab\Harmony\controllers\SiteController;
 
 /**
@@ -35,12 +37,24 @@ if ($_ENV['APP_DEBUG'] === true) {
 /**
  * Slim PHP
  * 
- * Create a dependency injection container 
+ * Create a dependency injection container and the app.
  */
 $container = new Container();
 AppFactory::setContainer($container);
-
 $app = AppFactory::create();
+
+/**
+ * Add the renderer 
+ * 
+ * This will add the renderer to the container. You can call it in the future 
+ * using the following: 
+ *  - $container->get('renderer');
+ */
+$container = $app->getContainer();
+$container->set('renderer', function () {
+    $renderer = new PhpRenderer(__DIR__ . '/src/views');
+    return $renderer;
+});
 
 /**
  * Middleware
@@ -69,6 +83,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
  */
 $app->get('/contact', \artbyrab\Harmony\controllers\SiteController::class . ':contact');
 $app->get('/about', \artbyrab\Harmony\controllers\SiteController::class . ':about');
+$app->get('/sitemap', \artbyrab\Harmony\controllers\SiteController::class . ':sitemap');
 
 /**
  * Run 
